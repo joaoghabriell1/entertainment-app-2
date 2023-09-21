@@ -6,11 +6,9 @@ const TrendingMoviesList = async () => {
   return (
     <div>
       <h3>Trending Movies List</h3>
-      <p>
-        {data?.map((movie: any, index: any) => {
-          return <li key={index}>{movie.original_title}</li>;
-        })}
-      </p>
+      {data?.map((movie: any, index: any) => {
+        return <li key={index}>{movie.original_title}</li>;
+      })}
     </div>
   );
 };

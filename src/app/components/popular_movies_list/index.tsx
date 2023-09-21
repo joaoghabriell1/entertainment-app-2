@@ -7,15 +7,13 @@ const PopularMoviesList = async () => {
   return (
     <div>
       <h3>Popular Movies</h3>
-      <p>
-        {data?.map((movie: any, index: any) => {
-          return (
-            <li key={index}>
-              <Link href={`/movies/${movie.id}`}>{movie.original_title}</Link>
-            </li>
-          );
-        })}
-      </p>
+      {data?.map((movie: any, index: any) => {
+        return (
+          <li key={index}>
+            <Link href={`/movies/${movie.id}`}>{movie.original_title}</Link>
+          </li>
+        );
+      })}
     </div>
   );
 };
