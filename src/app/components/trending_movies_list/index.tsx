@@ -7,7 +7,7 @@ const TrendingMoviesList = async () => {
     <div>
       <h3>Trending Movies List</h3>
       <p>
-        {data.map((movie: any, index: any) => {
+        {data?.map((movie: any, index: any) => {
           return <li key={index}>{movie.original_title}</li>;
         })}
       </p>

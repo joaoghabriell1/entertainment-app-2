@@ -8,7 +8,13 @@ export async function GET() {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDczOWMxYTcxMDU5OTIxMWVjNDAwODdjOGNlNWU0OCIsInN1YiI6IjY1MGI2MzdmYWVkZTU5MWFiMzM4OTMyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5tR_nnHxt5WCM86ST6Zw8XYezk-of-K0Bt3AbwfgkpY",
     },
   });
+
+  if (!res.ok) {
+    console.log(res.status, res.statusText);
+    throw new Error(res.statusText);
+  }
   const data = await res.json();
+  console.log(data);
 
   return NextResponse.json({ data: data.results });
 }

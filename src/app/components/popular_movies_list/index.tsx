@@ -8,15 +8,13 @@ const PopularMoviesList = async () => {
     <div>
       <h3>Popular Movies</h3>
       <p>
-        <Suspense fallback={<p>TESTE</p>}>
-          {data?.map((movie: any, index: any) => {
-            return (
-              <li key={index}>
-                <Link href={`/movies/${movie.id}`}>{movie.original_title}</Link>
-              </li>
-            );
-          })}
-        </Suspense>
+        {data?.map((movie: any, index: any) => {
+          return (
+            <li key={index}>
+              <Link href={`/movies/${movie.id}`}>{movie.original_title}</Link>
+            </li>
+          );
+        })}
       </p>
     </div>
   );
