@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
-const API_TOKEN: string = process.env.API_TOKEN as string;
+const API_TOKEN: string =
+  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDczOWMxYTcxMDU5OTIxMWVjNDAwODdjOGNlNWU0OCIsInN1YiI6IjY1MGI2MzdmYWVkZTU5MWFiMzM4OTMyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5tR_nnHxt5WCM86ST6Zw8XYezk-of-K0Bt3AbwfgkpY";
 
 export async function GET(
   request: Request,
