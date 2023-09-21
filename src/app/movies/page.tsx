@@ -1,6 +1,4 @@
 import React from "react";
-import TrendingMoviesList from "../components/trending_movies_list";
-import PopularMoviesList from "../components/popular_movies_list";
 import SearchMediaList from "../components/search-media-list";
 
 const Movie = async ({
@@ -12,8 +10,6 @@ const Movie = async ({
   let content = (
     <>
       <h2>Movies Page</h2>
-      <TrendingMoviesList />
-      <PopularMoviesList />
     </>
   );
 
