@@ -10,6 +10,7 @@ export async function GET(
 
   const API_URL = `https://api.themoviedb.org/3/search/movie?query=${query}`;
   const res = await fetch(`${API_URL}`, {
+    cache: "no-cache",
     headers: {
       "Content-type": "Application-json",
       Authorization: API_TOKEN,

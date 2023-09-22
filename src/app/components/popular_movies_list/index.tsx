@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 const PopularMoviesList = async () => {
-  const res = await fetch("http://localhost:3000/api/popular_movies");
+  const res = await fetch(`${process.env.LOCAL_API}/api/popular_movies`);
   const { data } = await res.json();
   return (
     <div>

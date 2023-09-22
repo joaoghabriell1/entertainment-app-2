@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const res = await fetch("https://api.themoviedb.org/3/movie/popular", {
+  const res = await fetch(`${process.env.EXTERNAL_API}/movie/popular`, {
+    cache: "no-cache",
     headers: {
       "Content-type": "Application-json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDczOWMxYTcxMDU5OTIxMWVjNDAwODdjOGNlNWU0OCIsInN1YiI6IjY1MGI2MzdmYWVkZTU5MWFiMzM4OTMyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5tR_nnHxt5WCM86ST6Zw8XYezk-of-K0Bt3AbwfgkpY",
+      Authorization: process.env.API_TOKEN as string,
     },
   });
   const data = await res.json();

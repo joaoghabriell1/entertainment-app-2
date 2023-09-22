@@ -1,5 +1,7 @@
 import React from "react";
 import SearchMediaList from "../components/search-media-list";
+import TrendingMoviesList from "../components/trending_movies_list";
+import PopularMoviesList from "../components/popular_movies_list";
 
 const Movie = async ({
   searchParams,
@@ -17,7 +19,13 @@ const Movie = async ({
     content = <SearchMediaList query={query as string} />;
   }
 
-  return <div>{content}</div>;
+  return (
+    <div>
+      <TrendingMoviesList />
+      <PopularMoviesList />
+      {content}
+    </div>
+  );
 };
 
 export default Movie;

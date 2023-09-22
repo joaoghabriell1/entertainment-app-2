@@ -1,7 +1,7 @@
 import React from "react";
 
 const TrendingMoviesList = async () => {
-  const res = await fetch("http://localhost:3000/api/trending_movies");
+  const res = await fetch(`${process.env.LOCAL_API}/api/trending_movies`);
   const { data } = await res.json();
   return (
     <div>
