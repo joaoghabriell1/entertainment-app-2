@@ -1,16 +1,10 @@
-import React from "react";
+import DefaultMediaList from "../default-media-list";
 
 const TrendingMoviesList = async () => {
   const res = await fetch(`${process.env.LOCAL_API}/api/trending_movies`);
   const { data } = await res.json();
-  return (
-    <div>
-      <h3>Trending Movies List</h3>
-      {data?.map((movie: any, index: any) => {
-        return <li key={index}>{movie.original_title}</li>;
-      })}
-    </div>
-  );
+
+  return <DefaultMediaList data={data.slice(0, 6)} heading="Treding Movies" />;
 };
 
 export default TrendingMoviesList;

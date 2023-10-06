@@ -1,20 +1,14 @@
 import React from "react";
-import Link from "next/link";
+import * as S from "./styles";
+import Navbar from "./Navbar";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/movies">Movies</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <S.Header>
+      <Logo />
+      <Navbar />
+    </S.Header>
   );
 };
 

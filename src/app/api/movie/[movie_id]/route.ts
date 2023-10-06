@@ -1,3 +1,4 @@
+import { chownSync } from "fs";
 import { NextResponse } from "next/server";
 
 const API_TOKEN: string =
@@ -17,6 +18,5 @@ export async function GET(
   });
 
   const data = await res.json();
-  console.log(data);
   return NextResponse.json({ data });
 }

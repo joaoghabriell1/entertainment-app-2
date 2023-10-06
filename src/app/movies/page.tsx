@@ -1,4 +1,3 @@
-import React from "react";
 import SearchMediaList from "../components/search-media-list";
 import TrendingMoviesList from "../components/trending_movies_list";
 import PopularMoviesList from "../components/popular_movies_list";
@@ -9,23 +8,22 @@ const Movie = async ({
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const query = searchParams.query;
-  let content = (
-    <>
-      <h2>Movies Page</h2>
-    </>
-  );
+  const page = searchParams.page;
+
+  let content;
 
   if (query) {
-    content = <SearchMediaList query={query as string} />;
+    content = <SearchMediaList page={page as string} query={query as string} />;
+  } else {
+    content = (
+      <>
+        <TrendingMoviesList />
+        <PopularMoviesList />
+      </>
+    );
   }
 
-  return (
-    <div>
-      <TrendingMoviesList />
-      <PopularMoviesList />
-      {content}
-    </div>
-  );
+  return <>{content}</>;
 };
 
 export default Movie;

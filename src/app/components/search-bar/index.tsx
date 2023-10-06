@@ -1,5 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import * as S from "./style";
+import Image from "next/image";
+import SearchIcon from "../../assets/icon-search.svg";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
@@ -17,18 +20,21 @@ const SearchBar = () => {
     router.push(`${match}?query=${query}`);
   };
   return (
-    <div>
+    <S.Wrapper>
       <form onSubmit={submitHandler}>
+        <button>
+          <Image src={SearchIcon} alt="search Icon" />
+        </button>
         <input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setQuery(e.currentTarget.value)
           }
+          placeholder="Search for your favorite movie!"
           value={query}
           type="text"
         />
-        <button>search</button>
       </form>
-    </div>
+    </S.Wrapper>
   );
 };
 

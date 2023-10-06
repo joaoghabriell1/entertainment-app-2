@@ -6,6 +6,7 @@ export default function Home() {
       <div>
         <h1>MovieDB API</h1>
       </div>
+      <section>Welcome to your movie app.</section>
     </main>
   );
 }

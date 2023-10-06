@@ -1,12 +1,13 @@
 import React from "react";
 import SearchBar from "../components/search-bar";
+import * as S from "./styles";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <S.Wrapper>
       <SearchBar />
       {children}
-    </div>
+    </S.Wrapper>
   );
 };
 

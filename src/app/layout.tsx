@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import Header from "./components/header";
-import Sidebar from "./components/sidebar";
+import StylesProvider from "./styles/StylesProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <Sidebar />
-        {children}
-      </body>
+      <StylesProvider>
+        <body className={outfit.className}>
+          <Header />
+          {children}
+        </body>
+      </StylesProvider>
     </html>
   );
 }

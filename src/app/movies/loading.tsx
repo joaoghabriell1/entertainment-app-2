@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import * as S from "./styles";
+import { TailSpin } from "react-loader-spinner";
 
 const loading = () => {
   return (
-    <div>
-      <h2>Loading</h2>
-    </div>
+    <S.LoadingStateWrapper>
+      <TailSpin height="40" width="40" color="#fff" ariaLabel="loading" />
+    </S.LoadingStateWrapper>
   );
 };
 
